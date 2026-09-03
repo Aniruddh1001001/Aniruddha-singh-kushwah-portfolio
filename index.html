@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aniruddha Singh Kushwah | Portfolio</title>
+<link href="style2.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="style.css" rel="stylesheet">
+<link href="style2.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "outline-variant": "#c3c6d7",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-container": "#bc4800",
+                "secondary-fixed": "#89f5e7",
+                "on-secondary-fixed": "#00201d",
+                "on-primary": "#ffffff",
+                "primary-fixed": "#dbe1ff",
+                "on-error": "#ffffff",
+                "outline": "#737686",
+                "secondary-container": "#86f2e4",
+                "background": "#f7f9fb",
+                "on-primary-container": "#eeefff",
+                "surface-bright": "#f7f9fb",
+                "on-secondary-fixed-variant": "#005049",
+                "tertiary-fixed": "#ffdbcd",
+                "code-bg": "#F1F5F9",
+                "surface": "#f7f9fb",
+                "surface-container": "#eceef0",
+                "on-surface-variant": "#434655",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-fixed": "#360f00",
+                "primary": "#004ac6",
+                "surface-card": "#FFFFFF",
+                "primary-fixed-dim": "#b4c5ff",
+                "on-primary-fixed": "#00174b",
+                "secondary-fixed-dim": "#6bd8cb",
+                "inverse-surface": "#2d3133",
+                "on-surface": "#191c1e",
+                "error": "#ba1a1a",
+                "on-secondary": "#ffffff",
+                "surface-tint": "#0053db",
+                "on-tertiary-container": "#ffede6",
+                "on-tertiary-fixed-variant": "#7d2d00",
+                "surface-dim": "#d8dadc",
+                "inverse-on-surface": "#eff1f3",
+                "on-background": "#191c1e",
+                "error-container": "#ffdad6",
+                "primary-container": "#2563eb",
+                "on-error-container": "#93000a",
+                "surface-variant": "#e0e3e5",
+                "secondary": "#006a61",
+                "on-secondary-container": "#006f66",
+                "tertiary": "#943700",
+                "surface-container-high": "#e6e8ea",
+                "on-primary-fixed-variant": "#003ea8",
+                "tertiary-fixed-dim": "#ffb596",
+                "surface-container-highest": "#e0e3e5",
+                "inverse-primary": "#b4c5ff",
+                "surface-container-low": "#f2f4f6",
+                "border-subtle": "#E2E8F0"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1200px",
+                "margin-desktop": "40px",
+                "unit": "4px",
+                "gutter": "24px",
+                "section-gap": "80px",
+                "margin-mobile": "16px",
+                "stack-sm": "8px",
+                "stack-md": "16px",
+                "stack-lg": "32px"
+        },
+        "fontFamily": {
+                "display": [
+                        "Geist"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Geist"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "code": [
+                        "JetBrains Mono"
+                ],
+                "label-caps": [
+                        "JetBrains Mono"
+                ],
+                "headline-md": [
+                        "Geist"
+                ],
+                "headline-lg": [
+                        "Geist"
+                ]
+        },
+        "fontSize": {
+                "display": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "code": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    body {
+        scroll-behavior: smooth;
+    }
+    .grid-bg {
+        background-image: 
+            linear-gradient(to right, #E2E8F0 1px, transparent 1px),
+            linear-gradient(to bottom, #E2E8F0 1px, transparent 1px);
+        background-size: 24px 24px;
+        background-position: center top;
+    }
+    
+    .nav-drawer {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .nav-drawer.open {
+        transform: translateX(0);
+    }
+    .drawer-overlay {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .drawer-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Drawer Overlay -->
+<div aria-hidden="true" class="drawer-overlay fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 md:hidden" id="drawerOverlay"></div>
+<!-- Navigation Drawer (Mobile) -->
+<aside class="nav-drawer md:hidden bg-surface dark:bg-surface-dim border-r border-border-subtle dark:border-outline-variant shadow-lg dark:shadow-none h-full w-80 rounded-r-xl fixed inset-y-0 left-0 z-[60] flex flex-col py-6 overflow-y-auto" id="navDrawer">
+<div class="px-margin-mobile mb-8">
+<h2 class="font-display text-headline-md font-bold text-on-surface">Aniruddha Singh Kushwah</h2>
+<p class="font-body-md text-body-md text-primary mt-1">Electronics Engineer</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Python &amp; Web Dev</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="rounded-full mx-2 px-4 py-3 flex items-center gap-3 active:opacity-80 transition-opacity bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary" href="#home">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;" data-weight="fill">home</span>
+<span class="font-body-md text-body-md">Home</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="about.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-md text-body-md">About</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="projects.html">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-body-md text-body-md">Projects</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="education.html">
+<span class="material-symbols-outlined">school</span>
+<span class="font-body-md text-body-md">Education</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="index.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-md text-body-md">Hello World</span>
+</a>
+</nav>
+</aside>
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4 md:hidden">
+<button aria-label="Open Menu" class="text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer active:scale-95 duration-200" id="menuBtn">
+<span class="material-symbols-outlined text-headline-md">menu</span>
+</button>
+</div>
+<div class="font-display text-body-lg font-bold tracking-tight text-on-surface dark:text-on-primary-fixed truncate">
+                Aniruddha Singh Kushwah
+            </div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors text-primary dark:text-primary-fixed font-semibold" href="#home">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="about.html">About</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="projects.html">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="education.html">Education</a>
+</nav>
+<a class="hidden md:inline-flex text-primary dark:text-primary-fixed font-display text-headline-md font-semibold cursor-pointer active:scale-95 duration-200 hover:text-primary transition-colors text-body-md" href="index.html">
+                Hello World
+            </a>
+<a class="md:hidden text-primary dark:text-primary-fixed font-semibold cursor-pointer active:scale-95 duration-200 text-body-md font-body-md" href="index.html">
+                 Hello World
+            </a>
+</div>
+</header>
+<main class="pt-24 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto space-y-section-gap">
+<!-- Hero Section -->
+<section class="relative pt-12 md:pt-24 pb-12 flex flex-col md:flex-row items-center gap-gutter" id="home">
+<div class="w-full md:w-3/5 space-y-stack-lg z-10">
+<div class="space-y-stack-sm">
+<p class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Portfolio</p>
+<h1 class="font-display text-display text-on-surface tracking-tight">ANIRUDDHA SINGH KUSHWAH</h1>
+<h2 class="font-body-lg text-body-lg text-on-surface-variant font-medium">Electronics Engineer | Python &amp; Web Development | Technology Enthusiast</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed">
+                   I am a passionate developer dedicated to building practical projects at the intersection of software, web development, and electronics. With a Diploma in Electronics Engineering and currently pursuing my B.Sc., I leverage my hands-on experience in Python programming and modern web technologies to solve complex technical challenges and create seamless digital experiences.
+                </p>
+<div class="flex flex-wrap items-center gap-stack-md pt-4">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary-container font-body-md text-body-md font-medium px-6 py-3 rounded transition-all hover:bg-surface-tint active:scale-95" href="projects.html">
+                        View My Projects
+                    </a>
+<a class="inline-flex items-center gap-2 text-primary font-body-md text-body-md font-medium hover:underline underline-offset-4 transition-all" href="Aniruddha_Singh_Kushwah_Resume.pdf" download>
+<span class="material-symbols-outlined text-body-md">download</span>
+                        Download Resume
+                    </a>
+</div>
+</div>
+<div class="w-full md:w-2/5 flex justify-center mt-8 md:mt-0">
+<div class="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden border border-border-subtle bg-surface-card p-4">
+<div class="absolute inset-0 grid-bg opacity-30"></div>
+<img alt="Aniruddha Singh Kushwah wearing a blue hoodie" class="w-full h-full object-cover rounded-xl relative z-10" src="Ani_profile.png">
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-border-subtle dark:border-outline-variant w-full py-stack-lg mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-stack-md w-full max-w-container-max mx-auto">
+<div class="font-display text-body-md font-bold text-on-surface">
+                © 2024 Aniruddha Singh Kushwah.
+            </div>
+<div class="flex gap-6">
+<a class="font-body-md text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline underline-offset-4 transition-all duration-300" href="https://linkedin.com/in/ani-kush">LinkedIn</a>
+<a class="font-body-md text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline underline-offset-4 transition-all duration-300" href="https://github.com/Aniruddh1001001">GitHub</a>
+<a class="font-body-md text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline underline-offset-4 transition-all duration-300" href="mailto:aniruddhasinghkushwah8@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navDrawer = document.getElementById('navDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const drawerLinks = navDrawer.querySelectorAll('a');
+
+        function toggleMenu() {
+            const isOpen = navDrawer.classList.contains('open');
+            if (isOpen) {
+                navDrawer.classList.remove('open');
+                drawerOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            } else {
+                navDrawer.classList.add('open');
+                drawerOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        drawerOverlay.addEventListener('click', toggleMenu);
+        
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Simple Active State Logic for Mobile Drawer (Intersection Observer)
+        const sections = document.querySelectorAll('section[id]');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    
+                    // Update Mobile Drawer
+                    drawerLinks.forEach(link => {
+                        link.classList.remove('bg-primary-container', 'dark:bg-primary', 'text-on-primary-container', 'dark:text-on-primary');
+                        link.classList.add('text-on-surface-variant', 'dark:text-on-surface-variant', 'hover:bg-surface-container-high');
+                        
+                        const icon = link.querySelector('.material-symbols-outlined');
+                        if(icon) {
+                            icon.removeAttribute('data-weight');
+                            icon.style.fontVariationSettings = '';
+                        }
+
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('bg-primary-container', 'dark:bg-primary', 'text-on-primary-container', 'dark:text-on-primary');
+                            link.classList.remove('text-on-surface-variant', 'dark:text-on-surface-variant', 'hover:bg-surface-container-high');
+                            if(icon) {
+                                icon.setAttribute('data-weight', 'fill');
+                                icon.style.fontVariationSettings = "'FILL' 1";
+                            }
+                        }
+                    });
+
+                    // Update TopAppBar (Desktop)
+                    const desktopLinks = document.querySelectorAll('header nav a');
+                    desktopLinks.forEach(link => {
+                        link.classList.remove('text-primary', 'dark:text-primary-fixed', 'font-semibold');
+                        link.classList.add('text-on-surface-variant', 'dark:text-on-surface-variant');
+                        
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('text-primary', 'dark:text-primary-fixed', 'font-semibold');
+                            link.classList.remove('text-on-surface-variant', 'dark:text-on-surface-variant');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+
+</body></html>
