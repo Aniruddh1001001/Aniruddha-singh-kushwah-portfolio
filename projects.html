@@ -128,14 +128,47 @@
             linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
             background-size: 20px 20px;
         }
+        .nav-drawer {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-drawer.open {
+            transform: translateX(0);
+        }
+        .drawer-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .drawer-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md antialiased pt-16">
+<div aria-hidden="true" class="drawer-overlay fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 md:hidden" id="drawerOverlay"></div>
+<aside class="nav-drawer md:hidden bg-surface dark:bg-surface-dim border-r border-border-subtle dark:border-outline-variant shadow-lg dark:shadow-none h-full w-80 rounded-r-xl fixed inset-y-0 left-0 z-[60] flex flex-col py-6 overflow-y-auto" id="navDrawer">
+<div class="px-margin-mobile mb-8">
+<h2 class="font-display text-headline-md font-bold text-on-surface">Aniruddha Singh Kushwah</h2>
+<p class="font-body-md text-body-md text-primary mt-1">Electronics Engineer</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Python &amp; Web Dev</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="index.html"><span class="material-symbols-outlined">home</span><span class="font-body-md text-body-md">Home</span></a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="about.html"><span class="material-symbols-outlined">person</span><span class="font-body-md text-body-md">About</span></a>
+<a class="rounded-full mx-2 px-4 py-3 flex items-center gap-3 active:opacity-80 transition-opacity bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary" href="projects.html"><span class="material-symbols-outlined">terminal</span><span class="font-body-md text-body-md">Projects</span></a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="education.html"><span class="material-symbols-outlined">school</span><span class="font-body-md text-body-md">Education</span></a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high mx-2 px-4 py-3 rounded-full flex items-center gap-3 active:opacity-80 transition-opacity" href="index.html"><span class="material-symbols-outlined">mail</span><span class="font-body-md text-body-md">Hello World</span></a>
+</nav>
+</aside>
 <!-- TopAppBar -->
 <header class="fixed top-0 left-0 w-full z-40 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant dark:border-outline">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
-<div class="flex items-center gap-stack-md cursor-pointer active:opacity-70 transition-opacity">
+<div class="flex items-center gap-stack-md">
+<button aria-label="Open Menu" class="md:hidden text-on-surface hover:text-primary transition-colors cursor-pointer active:scale-95 duration-200" id="menuBtn" type="button">
 <span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-variation-settings: &quot;FILL&quot; 0;">menu</span>
+</button>
 <span class="font-display text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed-dim">Aniruddha Singh Kushwah</span>
 </div>
 <!-- Desktop Navigation -->
@@ -280,6 +313,22 @@
 </div>
 </div>
 </footer>
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navDrawer = document.getElementById('navDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerLinks = navDrawer.querySelectorAll('a');
+
+    function toggleMenu() {
+        const isOpen = navDrawer.classList.toggle('open');
+        drawerOverlay.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    drawerOverlay.addEventListener('click', toggleMenu);
+    drawerLinks.forEach(link => link.addEventListener('click', toggleMenu));
+</script>
 
 
 </body></html>

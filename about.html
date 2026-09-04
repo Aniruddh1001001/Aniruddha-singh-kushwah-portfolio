@@ -115,7 +115,7 @@
 <!-- TopAppBar (Mobile Only) -->
 <header class="md:hidden fixed top-0 left-0 w-full z-40 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant dark:border-outline">
 <div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
-<button class="text-primary dark:text-primary-fixed-dim cursor-pointer active:opacity-70 transition-opacity">
+<button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="text-primary dark:text-primary-fixed-dim cursor-pointer active:opacity-70 transition-opacity" id="menu-button" type="button">
 <span class="material-symbols-outlined" data-icon="menu">menu</span>
 </button>
 <div class="font-display text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed-dim">
@@ -126,6 +126,20 @@
 </button>
 </div>
 </header>
+<!-- NavigationDrawer (Mobile Only) -->
+<div class="fixed inset-y-0 left-0 z-50 flex flex-col bg-surface dark:bg-surface-dim h-full w-[280px] rounded-r-xl border-r border-outline-variant dark:border-outline shadow-lg dark:shadow-none -translate-x-full ease-in-out duration-300 transform pt-16" id="mobile-nav">
+<div class="p-stack-md border-b border-outline-variant dark:border-outline">
+<h2 class="font-headline-md text-headline-md text-on-surface">Aniruddha Singh Kushwah</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Electronics Engineer</p>
+</div>
+<nav class="flex flex-col gap-2 py-stack-sm">
+<a class="flex items-center gap-stack-md text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all rounded-lg" href="projects.html"><span class="material-symbols-outlined">terminal</span><span>Projects</span></a>
+<a class="flex items-center gap-stack-md text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all rounded-lg" href="education.html"><span class="material-symbols-outlined">timeline</span><span>Experience</span></a>
+<a class="flex items-center gap-stack-md bg-primary-container text-on-primary-container rounded-full px-4 py-3 mx-2" href="about.html"><span class="material-symbols-outlined">person</span><span>About</span></a>
+<a class="flex items-center gap-stack-md text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all rounded-lg" href="index.html"><span class="material-symbols-outlined">home</span><span>Home</span></a>
+</nav>
+</div>
+<div class="fixed inset-0 bg-on-surface/20 z-40 hidden backdrop-blur-sm transition-opacity" id="nav-overlay"></div>
 <!-- NavigationDrawer (Desktop Only) -->
 <nav class="hidden md:flex fixed inset-y-0 left-0 z-50 flex-col h-full w-[280px] rounded-r-xl bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline shadow-lg dark:shadow-none">
 <div class="p-6 border-b border-outline-variant dark:border-outline">
@@ -246,4 +260,22 @@
 </div>
 </div>
 </footer>
+<script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navOverlay = document.getElementById('nav-overlay');
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+
+        function toggleNav() {
+            const isOpen = !mobileNav.classList.contains('-translate-x-full');
+            mobileNav.classList.toggle('-translate-x-full', isOpen);
+            navOverlay.classList.toggle('hidden', isOpen);
+            menuButton.setAttribute('aria-expanded', String(!isOpen));
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        }
+
+        menuButton.addEventListener('click', toggleNav);
+        navOverlay.addEventListener('click', toggleNav);
+        mobileNavLinks.forEach(link => link.addEventListener('click', toggleNav));
+    </script>
 </body></html>
